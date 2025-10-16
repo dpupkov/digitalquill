@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IELTS Writing Practice Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>IELTS Writing Practice Tool</h1>
+            <p class="subtitle">Practice with AI-powered feedback</p>
+        </header>
+
+        <!-- API Key Section -->
+        <section class="api-section">
+            <div class="api-input-group">
+                <label for="apiKey">Google Gemini API Key:</label>
+                <input type="password" id="apiKey" placeholder="Enter your API key">
+                <button id="saveApiKey">Save Key</button>
+                <span id="apiStatus" class="status-message"></span>
+            </div>
+        </section>
+
+        <!-- Timer Section -->
+        <section class="timer-section" id="timerSection" style="display: none;">
+            <div class="timer-display" id="timerDisplay">
+                <span class="timer-label">Time Remaining:</span>
+                <span class="timer-value" id="timerValue">--:--</span>
+            </div>
+        </section>
+
+        <!-- Task Generation Section -->
+        <section class="task-section">
+            <div class="task-controls">
+                <label for="taskType">Select Task Type:</label>
+                <select id="taskType">
+                    <option value="task1">Task 1 - Letter Writing (20 min)</option>
+                    <option value="task2">Task 2 - Essay Writing (40 min)</option>
+                </select>
+                <button id="generateTask">Generate IELTS Writing Task</button>
+            </div>
+
+            <div class="manual-task-entry">
+                <textarea id="manualTaskInput" placeholder="Or paste your own task here and start the timer..." rows="5"></textarea>
+                <button id="startManualTask" class="secondary-btn">Start Manual Task</button>
+            </div>
+            
+            <div class="task-display" id="taskDisplay" style="display: none;">
+                <h2>Your Task</h2>
+                <div id="taskContent" class="task-content"></div>
+            </div>
+        </section>
+
+        <!-- Response Section -->
+        <section class="response-section" id="responseSection" style="display: none;">
+            <h2>Your Response</h2>
+            <textarea id="responseInput" placeholder="Write your answer here..." rows="15"></textarea>
+            <div class="word-counter">
+                Word Count: <span id="wordCount">0</span> words
+                <span id="wordWarning" class="warning-text"></span>
+            </div>
+            <button id="submitResponse" class="submit-btn">Submit for Evaluation</button>
+        </section>
+
+        <!-- Results Section -->
+        <section class="results-section" id="resultsSection" style="display: none;">
+            <h2>Evaluation Results</h2>
+            <div id="evaluationResults" class="evaluation-content"></div>
+        </section>
+
+        <!-- History Section -->
+        <section class="history-section">
+            <button id="viewHistory" class="secondary-btn">View History</button>
+            <div id="historyDisplay" class="history-content" style="display: none;"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
